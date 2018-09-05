@@ -48,7 +48,7 @@ def createExcel(dictData):
 
 # 获取总共页数
 def getPageNum():
-    url_page = "https://www.lagou.com/jobs/list_python?labelWords=&fromSearch=true&suginput="
+    url_page = ("https://www.lagou.com/jobs/list_{}?labelWords=&fromSearch=true&suginput=").format(keyWord)
     page_html = requests.get(url_page, headers=HEADERS)
     selector = etree.HTML(page_html.text)
     # xpath得到的是数组，得到页数并转换成int
@@ -58,7 +58,7 @@ def getPageNum():
 
 # 获取搜索到的页面的json数据
 def getData():
-    url = ('https://www.lagou.com/jobs/positionAjax.json?needAddtionalResult=false').format(keyWord)
+    url = ('https://www.lagou.com/jobs/positionAjax.json?needAddtionalResult=false')
     print(url)
     dataList = []
     index = 0

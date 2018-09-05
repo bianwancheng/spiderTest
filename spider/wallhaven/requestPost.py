@@ -67,7 +67,7 @@ class Spider():
                 j += 1
 
     def getLinks(self, number):
-        # 此函数可以获取给定numvber的页面中所有图片的链接，用List形式返回
+        # 此函数可以获取给定number的页面中所有图片的链接，用List形式返回
         url = (
             "https://alpha.wallhaven.cc/search?q={}&categories=111&purity=100&sorting="
             "relevance&order=desc&page={}").format(keyWord, number)
